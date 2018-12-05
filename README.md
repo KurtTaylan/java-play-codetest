@@ -1,21 +1,39 @@
-# Qudini web developer code test
+# Answer
 
-To test how quickly you can pick up a new project and follow requirements we ask candidates to do the following project. You have a choice of web frameworks you can use: 
+### API includes services:
 
-- Play Framework 2 : (Play 2.x https://www.playframework.com/download)
-- Spring WebFlux : https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html
+1. **HTTP POST**: */customers/sort* 
 
-that meets the following requirements: 
+     Takes list of customer and sort them by due time ASC. 
+     
 
-- Fork this project 
-- Start project in the chosen framework
-- Provide an API which accepts a list of json 'customer' objects in the body of a POST request (see json example attached). 
-- The API should take this list of objects and sort them by due time then return this back as a sorted json array.
-- Should use the Joda time (http://www.joda.org/joda-time/) library to handle times with timezones.  
-- The API should be non-blocking and be as efficient as possible in its sorting. 
-- We'll test this by load testing the project with a few hundred users to see how it performs (if you have time try using Jmeter to test your implementation). 
+### Test
+#### Automatically
+     There are 2 scope of tests: 
+        1. Unit Test
+        2. Integration Test
+        
+     I did not write different profile to run them seperately because it is toy project.
+     To simply test the application run following command:
+        
+        - mvn clean install            
+ 
+ 
+#### Manually from UI
 
-Bonus points: 
+    To test application manually go to following page and upload data and see the result.
+    
+        - http://localhost:8080/swagger-ui.html
+        
+        
+### Architecture
 
-- Some tests to ensure your code is working as expected
-- An API is great, but how about adding some UI for easy upload of the file. 
+I followed hexagonal ( Ports & Adapters ) architecture: https://blog.ndepend.com/hexagonal-architecture/
+We have 3 layer: 
+1. Infrastructure: Outmost layer for third party and tech dependencies here.
+2. Application: This layer has services for glue between domain and infrastructure layer
+3. Domain: Your domain-core layer here. Business most information. 
+
+
+### Misc
+TBD.
