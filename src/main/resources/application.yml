@@ -2,6 +2,8 @@ spring:
   application.name: java_play_code
   pid:
     file: ${java.io.tmpdir}/java_play_code.pid
+  jackson:
+    serialization.write_dates_as_timestamps: false
 
 server:
   port: 8080

@@ -2,7 +2,7 @@
 
 ### API includes services:
 
-1. **HTTP POST**: */customers/sort* 
+1. **HTTP POST**: */customers/sort-by-due-time* 
 
      Takes list of customer and sort them by due time ASC. 
      
@@ -31,9 +31,5 @@
 I followed hexagonal ( Ports & Adapters ) architecture: https://blog.ndepend.com/hexagonal-architecture/
 We have 3 layer: 
 1. Infrastructure: Outmost layer for third party and tech dependencies here.
-2. Application: This layer has services for glue between domain and infrastructure layer
+2. Application: This layer has services for glue between domain and infrastructure layer (Won't need it)
 3. Domain: Your domain-core layer here. Business most information. 
-
-
-### Misc
-TBD.
